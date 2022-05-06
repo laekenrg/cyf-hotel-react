@@ -55,3 +55,28 @@ tr {
 .card {
   width: 18rem;
 }
+
+.Card-container {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+}
+
+li {
+  list-style: none;
+}
+.card-body {
+  text-align: center;
+}
+
+.card-tittle {
+  text-align: center;
+}
+.footer-list {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+}
+.card-review {
+  text-align: center;
+}

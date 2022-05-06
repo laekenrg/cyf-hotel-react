@@ -24,3 +24,8 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+
+td,
+th {
+  color: #e9ecef;
+}
