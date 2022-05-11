@@ -5,16 +5,17 @@ import TouristInfoCards from "./components/TouristInfoCards";
 import { info } from "./data/infDestinos";
 import Footer from "./components/Footer";
 import infoFooter from "./data/infFooter";
+import Restaurant from "./components/Restaurant";
 import "./App.css";
 
 const App = () => {
   return (
     <div className="App">
       <Heading />
-      <Bookings />
       <div className="Card-container">
         {info.map(card => (
           <TouristInfoCards
+            key={card.nameCountry}
             pictures={card.picture}
             country={card.nameCountry}
             review={card.review}
@@ -22,6 +23,8 @@ const App = () => {
           />
         ))}
       </div>
+      <Bookings />
+      <Restaurant />
       <Footer inf={infoFooter} />
     </div>
   );

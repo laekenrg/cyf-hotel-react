@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = props => {
+  const [classBoot, setClassBoot] = useState("table-default");
+
+  function changeColor() {
+    setClassBoot(classBoot =>
+      classBoot === "table-default" ? "bg-danger" : "table-default"
+    );
+  }
   return (
-    <table class="table table-striped table-dark">
+    <table className="table table-striped table-dark">
       <thead>
         <tr>
           <th scope="col">ID</th>
@@ -23,7 +30,7 @@ const SearchResults = props => {
           const dateOut = moment(item.checkOutDate);
 
           return (
-            <tr>
+            <tr className={classBoot} onClick={changeColor} key={item.id}>
               <th scope="row">{item.id}</th>
               <td>{item.title}</td>
               <td>{item.firstName}</td>
