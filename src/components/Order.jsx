@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import RestaurantButton from "./RestaurantButton";
 
-const Order = ({ footCountNumber, orderNumber, orderType }) => {
+const Order = ({ orderType }) => {
+  const [order, setOrder] = useState(0);
+  function orderFoot() {
+    setOrder(order + 1);
+  }
   return (
     <li>
-      {orderType}: {footCountNumber} <RestaurantButton order={orderNumber} />
+      {orderType}: {order} <RestaurantButton order={orderFoot} />
     </li>
   );
 };
