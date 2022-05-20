@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import moment from "moment";
-const HighlightRows = ({ item }) => {
+const HighlightRows = ({ item, findId }) => {
   const [classBoot, setClassBoot] = useState("table-default");
 
   function changeColor() {
@@ -21,6 +21,9 @@ const HighlightRows = ({ item }) => {
       <td>{item.checkInDate}</td>
       <td>{item.checkOutDate}</td>
       <td>{dateOut.diff(dateIn, "days")}</td>
+      <td>
+        <button onClick={() => findId(item.id)}>Show Profile</button>
+      </td>
     </tr>
   );
 };

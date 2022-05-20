@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 import infoFooter from "./data/infFooter";
 import Restaurant from "./components/Restaurant";
 import "./App.css";
-
+console.log(info);
 const App = () => {
   return (
     <div className="App">

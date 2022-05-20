@@ -41,6 +41,7 @@
 
 tr {
   color: #5b5757;
+  cursor: pointer;
 }
 
 .results {
@@ -79,4 +80,34 @@ li {
 }
 .card-review {
   text-align: center;
+}
+
+.restaurant-orders h3 {
+  text-align: center;
+}
+.orders-list {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+}
+
+.img-food-list {
+  height: 200px;
+  border-radius: 30px;
+}
+.food-list h5 {
+  text-align: center;
+}
+
+.restaurant-button {
+  display: flex;
+  justify-content: center;
+}
+
+.customer-section {
+  display: flex;
+}
+
+.customer-data {
+  margin-left: 60px;
 }
