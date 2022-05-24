@@ -4,6 +4,8 @@ import SearchResults from "./SearchResults.jsx";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const search = searchVal => {
     const checkData = bookings.filter(
@@ -15,17 +17,26 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me`)
+    setLoading(true);
+    fetch(`https://cyf-react.glitch.me/delayed`)
       .then(res => res.json())
       .then(data => {
         setBookings(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        setErrorMessage(err.error);
+        setLoading(false);
       });
   }, []);
 
-  return (
+  return loading ? (
+    <h2>Loading...</h2>
+  ) : (
     <div className="App-content">
       {bookings ? (
         <div className="container">
+          <h2>{errorMessage}</h2>
           <Search search={search} />
           {<SearchResults results={bookings} />}
         </div>
